@@ -1,12 +1,8 @@
 const express = require('express');
 const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
-const contactUsRoute = require('./contactUs.route');
-const docsRoute = require('./docs.route');
-const blogRoute = require('./blog.route');
-const courseRoute = require('./course.route');
-const paymentRoute = require('./payment.route');
-const accommodationRoute = require('./accommodation.route');
+const senaServiceRoute = require('./senaService.route');
+const senaPostRoute = require('./senaPost.route');
 
 const config = require('../../config/config');
 
@@ -17,29 +13,18 @@ const defaultRoutes = [
     path: '/auth',
     route: authRoute,
   },
+
   {
-    path: '/payment',
-    route: paymentRoute,
+    path: '/senaPost',
+    route: senaPostRoute,
   },
   {
-    path: '/accommodation',
-    route: accommodationRoute,
-  },
-  {
-    path: '/course',
-    route: courseRoute,
-  },
-  {
-    path: '/blog',
-    route: blogRoute,
+    path: '/senaService',
+    route: senaServiceRoute,
   },
   {
     path: '/users',
     route: userRoute,
-  },
-  {
-    path: '/contactUs',
-    route: contactUsRoute,
   },
 ];
 
@@ -47,7 +32,7 @@ const devRoutes = [
   // routes available only in development mode
   {
     path: '/docs',
-    route: docsRoute,
+    route: senaServiceRoute,
   },
 ];
 
